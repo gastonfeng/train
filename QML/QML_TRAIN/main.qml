@@ -1,22 +1,53 @@
 //http://blog.csdn.net/foruok/article/details/46839569
-import QtQuick 2.4
-import QtQuick.Controls 1.3
+import QtQuick 2.7
+import QtQuick.Controls 2.0
 import QtQuick.Window 2.2
 
 Window {
     title: "StackViewDemo";
-    width: 480;
-    height: 320;
+    width: 4096;
+    height: 2304;
     visible: true;
 
     StackView {
         id: stack;
-        anchors.centerIn: parent;
-        width: 600;
-        height: 300;
+        anchors.fill: parent;
+        //width: 600;
+        //height: 300;
         property var home: null;
 
-        Text {
+        pushEnter: Transition {
+            PropertyAnimation {
+                property: "opacity"
+                from: 0
+                to:1
+                duration: 100
+            }
+        }
+        pushExit: Transition {
+            PropertyAnimation {
+                property: "opacity"
+                from: 1
+                to:0
+                duration: 100
+            }
+        }
+        popEnter: Transition {
+            PropertyAnimation {
+                property: "opacity"
+                from: 0
+                to:1
+                duration: 100
+            }
+        }
+        popExit: Transition {
+            PropertyAnimation {
+                property: "opacity"
+                from: 1
+                to:0
+                duration: 100
+            }
+        }        Text {
             text: "Click to create first page";
             font.pointSize: 14;
             font.bold: true;
@@ -34,6 +65,10 @@ Window {
 
         Rectangle {
             color: Qt.rgba(stack.depth*0.1, stack.depth*0.2, stack.depth*0.3);
+            Image {
+                anchors.fill: parent
+                source: stack.depth+".png"
+            }
 
             Text {
                 anchors.centerIn: parent;
