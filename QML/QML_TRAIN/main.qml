@@ -1,6 +1,7 @@
 //from :http://www.cnblogs.com/L-Arikes/p/4380382.html
 import QtQuick 2.0
 import QtQuick.Window 2.0
+import Controller 1.0
 
 Window {
     width: 800
@@ -15,11 +16,10 @@ Window {
             text: 'Click anywhere'
         }
 
-        WorkerScript {
+        Controller {
             id: myWorker
-            source: "script.js"
 
-            onMessage: myText.text = messageObject.reply
+            onResult: myText.text = result
         }
 
         Timer {
@@ -29,22 +29,14 @@ Window {
             property int index: 0
             onTriggered: {
                 index = index + 1
-                myWorker.sendMessage({
-                                         tmr: index,
-                                         x:0,
-                                         y:0
-                                     })
+                myWorker.operate('{ operate }')
             }
         }
 
         MouseArea {
             id: mou
             anchors.fill: parent
-            onClicked: myWorker.sendMessage({
-                                                tmr:'没有',
-                                                x: mouse.x,
-                                                y: mouse.y
-                                            })
+            onClicked: myWorker.operate('{ onClicked }')
         }
     }
 }
