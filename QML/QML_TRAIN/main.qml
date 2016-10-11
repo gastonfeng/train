@@ -1,7 +1,8 @@
 //from :http://www.cnblogs.com/L-Arikes/p/4380382.html
 import QtQuick 2.0
 import QtQuick.Window 2.0
-import Controller 1.0
+import QtQml 2.0
+import "./Datetime.js" as Datetime
 
 Window {
     width: 800
@@ -13,30 +14,13 @@ Window {
 
         Text {
             id: myText
-            text: 'Click anywhere'
+
+
+            text: Datetime.currentDatetime()
+
         }
 
-        Controller {
-            id: myWorker
 
-            onResult: myText.text = result
-        }
-
-        Timer {
-            interval: 1000
-            running: true
-            repeat: true
-            property int index: 0
-            onTriggered: {
-                index = index + 1
-                myWorker.operate('{ operate }')
-            }
-        }
-
-        MouseArea {
-            id: mou
-            anchors.fill: parent
-            onClicked: myWorker.operate('{ onClicked }')
-        }
     }
+
 }
