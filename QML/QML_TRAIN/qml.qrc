@@ -1,8 +1,5 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>MainForm.ui.qml</file>
-        <file>1.png</file>
-        <file>2.png</file>
     </qresource>
 </RCC>
