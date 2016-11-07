@@ -2,97 +2,119 @@
 import QtQuick 2.4
 import QtQuick.Controls 1.3
 import QtQuick.Window 2.2
+import QtQuick.Layouts 1.1
+import AndroidInfo 1.0
 
 Window {
-    title: "StackViewDemo";
-    width: 480;
-    height: 320;
-    visible: true;
-
-    StackView {
-        id: stack;
-        anchors.centerIn: parent;
-        width: 600;
-        height: 300;
-        property var home: null;
-
-        Text {
-            text: "Click to create first page";
-            font.pointSize: 14;
-            font.bold: true;
-            color: "blue";
-            anchors.centerIn: parent;
-            MouseArea {
-                anchors.fill: parent;
-                onClicked: if(stack.depth == 0)stack.push(page);
-            }
-        }
+    title: "StackViewDemo"
+    visible: true
+    AndroidInfo{
+        id:android
     }
 
-    Component {
-        id: page;
-
-        Rectangle {
-            color: Qt.rgba(stack.depth*0.1, stack.depth*0.2, stack.depth*0.3);
+    Rectangle {
+        anchors.fill: parent
+        ColumnLayout {
+            anchors.fill: parent
+            Text{
+                text:"亮度:"+android.Brightness()
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
+            Text{
+                text:"自动亮度:"+android.isAutoBrightness()
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
+            Text{
+                text:"serialNumber:"+android.serialNumber()
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+            }
 
             Text {
-                anchors.centerIn: parent;
-                text: "depth - " + stack.depth;
-                font.pointSize: 24;
-                font.bold: true;
-                color: stack.depth <= 4 ? Qt.lighter(parent.color) : Qt.darker(parent.color);
+                text: 'SDK版本:' + android.getandroidSdkVersion()
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
             }
 
-            Button {
-                id: next;
-                anchors.right: parent.right;
-                anchors.bottom: parent.bottom;
-                anchors.margins: 8;
-                text: "Next";
-                width: 70;
-                height: 30;
-                onClicked: {
-                    if(stack.depth < 8) stack.push(page);
-                }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '网络状态:' + android.networkStatus()
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '应用目录:' + android.filesDir()
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '铃声目录:' + android.ringtonesDir()
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '视频目录' + android.movieDir
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: "音乐目录" + android.musicDir()
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '照片目录' + android.dcimDir()
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '数据目录' + android.dataDir()
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: "外部存储目录" + android.externalStorageDir()
+            }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '应用缓存目录:' + android.appCacheDir()
             }
 
-            Button {
-                id: back;
-                anchors.right: next.left;
-                anchors.top: next.top;
-                anchors.rightMargin: 8;
-                text: "Back";
-                width: 70;
-                height: 30;
-                onClicked: {
-                    if(stack.depth > 0) stack.pop();
-                }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '应用名' + android.appClassName()
             }
 
-            Button {
-                id: home;
-                anchors.right: back.left;
-                anchors.top: next.top;
-                anchors.rightMargin: 8;
-                text: "Home";
-                width: 70;
-                height: 30;
-                onClicked: {
-                    if(stack.depth > 0)stack.pop(stack.initialItem);
-                }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: 'APK位置' + android.appLocation()
             }
-
-            Button {
-                id: clear;
-                anchors.right: home.left;
-                anchors.top: next.top;
-                anchors.rightMargin: 8;
-                text: "Clear";
-                width: 70;
-                height: 30;
-                onClicked: {
-                    if(stack.depth > 0)stack.clear();
-                }
+            Text {
+                font.pointSize: 16
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                text: '包名' + android.packageName()
             }
         }
     }

@@ -1,6 +1,8 @@
 TEMPLATE = app
 
-QT += qml quick
+QT += qml quick androidextras core
+QT       -= gui
+
 CONFIG += c++11
 
 SOURCES += main.cpp \
