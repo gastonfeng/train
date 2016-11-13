@@ -1,0 +1,3 @@
+[submodule "QMLmate"]
+	path = QMLmate
+	url = https://github.com/gastonfeng/QMLmate.git
