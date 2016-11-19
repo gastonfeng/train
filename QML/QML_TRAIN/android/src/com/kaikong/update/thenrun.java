@@ -24,7 +24,6 @@ public class thenrun extends BroadcastReceiver {
         context.registerReceiver(mReceiver, mIntentFilter);
         //thenrun.registerReceiver(getApplicationContext());//注册广播，用于监听应用是否安装完成
         System.out.println("thenrun registerReceiver Completed.");
-
     }
 
     public void unregisterReceiver(Context context) {
