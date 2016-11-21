@@ -3,7 +3,7 @@ TEMPLATE = app
 QT += qml quick
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES +=
 
 RESOURCES += qml.qrc
 
@@ -12,3 +12,7 @@ QML_IMPORT_PATH =
 
 # Default rules for deployment.
 include(deployment.pri)
+
+DISTFILES += \
+    python.py \
+    example.qml
