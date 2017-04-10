@@ -32,7 +32,7 @@ public class thenrun extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        System.out.println("thenrun Receiver");
+        System.out.println("java: thenrun Receiver");
         String action = intent.getAction();
         String packageName = intent.getData().getSchemeSpecificPart();
         if (Intent.ACTION_PACKAGE_ADDED.equals(action)) {

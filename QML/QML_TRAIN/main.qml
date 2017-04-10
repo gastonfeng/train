@@ -14,6 +14,8 @@ Window {
     //    }
     onBeforeRendering: {
         console.info('onBeforeRendering in')
+        AndroidInfo.setBrightness(100)
+        AndroidInfo.vibrate(1000)
         AndroidInfo.setRunAfterInstall()
         console.info('onBeforeRendering out')
     }
@@ -22,7 +24,7 @@ Window {
         ColumnLayout {
             anchors.fill: parent
             Text {
-                text: "亮度:" + AndroidInfo.Brightness()
+                text: "亮度:" + AndroidInfo.brightness()
                 font.pointSize: 16
                 Layout.fillHeight: true
                 Layout.fillWidth: true
