@@ -1,0 +1,6 @@
+[submodule "quickpromise"]
+	path = quickpromise
+	url = ../../benlau/quickpromise.git
+[submodule "QMLmate"]
+	path = QMLmate
+	url = ../QMLmate.git
