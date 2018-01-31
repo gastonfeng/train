@@ -1,0 +1,3 @@
+[submodule "quickpromise"]
+	path = quickpromise
+	url = https://github.com/benlau/quickpromise.git

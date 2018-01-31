@@ -11,4 +11,5 @@ RESOURCES += qml.qrc
 QML_IMPORT_PATH =
 
 # Default rules for deployment.
+include(../../quickpromise/quickpromise.pri)
 include(deployment.pri)
