@@ -2,5 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
+        <file>tst_test.qml</file>
+        <file>tst_chart.qml</file>
+        <file>../../qtbase/lib_qml/KLineSeries.qml</file>
     </qresource>
 </RCC>

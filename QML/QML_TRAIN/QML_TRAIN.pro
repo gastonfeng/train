@@ -1,9 +1,10 @@
 TEMPLATE = app
 
-QT += qml quick
-CONFIG += c++11
-
-SOURCES += main.cpp
+QT += core gui qml quick charts testlib
+CONFIG +=warn_on qmltestcase
+TARGET=tst_test
+SOURCES += \
+    main.cpp
 
 RESOURCES += qml.qrc
 

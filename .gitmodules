@@ -4,3 +4,15 @@
 [submodule "QMLmate"]
 	path = QMLmate
 	url = ../QMLmate.git
+[submodule "qtbase"]
+	path = qtbase
+	url = ssh://kaikong@192.168.31.10/home/git/qtbase.git
+[submodule "testable"]
+	path = testable
+	url = ../../benlau/testable.git
+[submodule "hal"]
+	path = hal
+	url = ssh://kaikong@192.168.31.10/home/git/hal.git
+[submodule "windows"]
+	path = windows
+	url = ssh://kaikong@192.168.31.10/home/git/windows.git
