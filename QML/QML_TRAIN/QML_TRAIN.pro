@@ -1,15 +1,24 @@
+QT       += testlib
+
+TARGET = testable
+CONFIG   += console
+CONFIG   -= app_bundle
+
 TEMPLATE = app
 
-QT += core gui qml quick charts testlib
-CONFIG +=warn_on qmltestcase
-TARGET=tst_test
 SOURCES += \
     main.cpp
+DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 RESOURCES += qml.qrc
 
-# Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
-
 # Default rules for deployment.
-include(deployment.pri)
+include (../../testable/testable.pri)
+
+HEADERS += \
+    main.h
+
+DISTFILES += \
+    tst_chart.qml \
+    tst_test.qml \
+    main.qml

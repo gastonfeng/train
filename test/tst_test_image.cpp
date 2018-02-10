@@ -36,15 +36,14 @@ public:
 private slots:
     void initTestCase();
     void cleanupTestCase();
-    void test_case1();
-    void test_case_jpg();
-    void test_case_bmp();
     void test_retain(){
         retain_dev=file_dev_init("retain.dat",0);
         retain_init();
-
         retain_output();
     }
+    void test_case1();
+    void test_case_jpg();
+    void test_case_bmp();
 };
 
 test_image::test_image()
