@@ -4,9 +4,6 @@
 [submodule "QMLmate"]
 	path = QMLmate
 	url = ../QMLmate.git
-[submodule "qtbase"]
-	path = qtbase
-	url = ssh://kaikong@192.168.31.10/home/git/qtbase.git
 [submodule "testable"]
 	path = testable
 	url = ../../benlau/testable.git
@@ -19,3 +16,6 @@
 [submodule "mywork"]
 	path = mywork
 	url = ssh://kaikong@192.168.31.10/home/git/mywork.git
+[submodule "PyQtSamples"]
+	path = PyQtSamples
+	url = ../../Upcios/PyQtSamples.git

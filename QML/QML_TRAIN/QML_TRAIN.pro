@@ -19,6 +19,11 @@ HEADERS += \
     main.h
 
 DISTFILES += \
-    tst_chart.qml \
     tst_test.qml \
-    main.qml
+    main.qml \
+    ../../qtbase/lib_qml/test/Configini.qml \
+    ../../qtbase/lib_qml/test/Lineardata.qml \
+    ../../qtbase/lib_qml/test/Model.qml \
+    ../../qtbase/lib_qml/test/test_Kimage.qml \
+    ../../qtbase/lib_qml/test/test_klinears.qml \
+    ../../qtbase/lib_qml/test/TestListModel.qml
