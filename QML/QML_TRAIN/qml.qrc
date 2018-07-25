@@ -2,7 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>tst_test.qml</file>
-        <file>../../qtbase/lib_qml/KLineSeries.qml</file>
-        <file>../../qtbase/lib_qml/misc.js</file>
+        <file>../../mywork/qtbase/lib_qml/KLineSeries.qml</file>
+        <file>../../mywork/qtbase/lib_qml/misc.js</file>
+        <file>../../mywork/qtbase/lib_qml/ConfigButton.qml</file>
+        <file>tst_ConfigButton.qml</file>
     </qresource>
 </RCC>
